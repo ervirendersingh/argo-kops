@@ -10,8 +10,8 @@ spec:
     server:  https://kubernetes.default.svc
   project: deployments
   source:
-    path: argocd/guestbook
-    repoURL: git@bitbucket.org:organicresponse/portal-deployments.git
+    path: services/guestbook
+    repoURL: https://github.com/ervirendersingh/argo-kops.git
     targetRevision: HEAD
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.

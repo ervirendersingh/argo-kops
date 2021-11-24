@@ -9,8 +9,8 @@ spec:
     name: in-cluster
   project: deployments
   source:
-    path: argocd/deployments
-    repoURL: git@bitbucket.org:organicresponse/portal-deployments.git
+    path: deployments
+    repoURL: https://github.com/ervirendersingh/argo-kops.git
     targetRevision: HEAD
     # Sync policy
   syncPolicy:
