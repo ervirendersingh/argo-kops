@@ -9,4 +9,8 @@ export awsRegion=us-east-2a #aws region where cluster will reside
 # set the cluster to be used with kubectl
 kubectl config set-cluster $KOPS_CLUSTER_NAME --insecure-skip-tls-verify
 
-kustomize build argocd-namespace | kubectl apply -f .
+kubectl create namespace argocd
+kubectl apply -f services/argocd/argocd.yml -n argocd
+
+cd argocd-bootstrap
+kustomize build . | kubectl apply -f .
