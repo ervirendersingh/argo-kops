@@ -7,4 +7,3 @@ data:
   admin.enabled: 'false'
   statusbadge.enabled: 'true'
   users.anonymous.enabled: 'true'
-  policy.default: role:readonly
