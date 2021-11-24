@@ -1,0 +1,7 @@
+# File values.yaml
+clusterName: joey.k8s.local
+kubernetesVersion: 1.19.7
+awsRegion: us-east-2a
+kopsStateStore: s3://joey-kops-bkt
+igMasterName: master-joey
+igNodesName: nodes-joey
