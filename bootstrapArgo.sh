@@ -4,7 +4,6 @@
 export AWS_PROFILE=personalme
 export KOPS_STATE_STORE=s3://joey-kops-bkt #Kops state bucket
 export KOPS_CLUSTER_NAME=joey.k8s.local #Kops cluster name
-export awsRegion=us-east-2a #aws region where cluster will reside 
 
 # set the cluster to be used with kubectl
 kubectl config set-cluster $KOPS_CLUSTER_NAME --insecure-skip-tls-verify
@@ -13,4 +12,4 @@ kubectl create namespace argocd
 kubectl apply -f services/argocd/argocd.yml -n argocd
 
 cd argocd-bootstrap
-kustomize build . | kubectl apply -f .
+kustomize build . | kubectl apply -f -
