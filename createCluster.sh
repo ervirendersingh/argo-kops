@@ -1,7 +1,5 @@
 #!/bin/bash
-
-export AWS_PROFILE=personalme
-export KOPS_STATE_STORE=s3://joey-kops-bkt #Kops state bucket
+export KOPS_STATE_STORE=s3://joey-kops-bkt1 #Kops state bucket
 export KOPS_CLUSTER_NAME=joey.k8s.local #Kops cluster name
 export awsRegion=ap-southeast-2a #aws region where cluster will reside 
 

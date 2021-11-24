@@ -11,7 +11,7 @@ spec:
     rbac: {}
   channel: stable
   cloudProvider: aws
-  configBase: s3://joey-kops-bkt/joey.k8s.local
+  configBase: s3://joey-kops-bkt1/joey.k8s.local
   containerRuntime: docker
   etcdClusters:
   - cpuRequest: 200m 
@@ -63,9 +63,9 @@ metadata:
   name: master-joey
 spec:
   image: 099720109477/ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210119.1
-  machineType: t2.micro
-  maxSize: 3
-  minSize: 3
+  machineType: t2.medium
+  maxSize: 1
+  minSize: 1
   nodeLabels:
     kops.k8s.io/instancegroup: master-joey
   role: Master
@@ -86,14 +86,9 @@ spec:
     k8s.io/cluster-autoscaler/enabled: ""
     k8s.io/cluster-autoscaler/node-template/label: ""
     k8s.io/cluster-autoscaler/joey.k8s.local: ""
-  machineType: t2.micro
+  machineType: t2.medium
   maxSize: 10
-  minSize: 8
-  mixedInstancesPolicy:
-    instances:
-    - t2.micro
-    onDemandAboveBase: 0
-    onDemandBase: 1
+  minSize: 5
   nodeLabels:
     kops.k8s.io/instancegroup: nodes-joey
   role: Node

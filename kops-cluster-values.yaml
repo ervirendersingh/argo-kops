@@ -2,6 +2,8 @@
 clusterName: joey.k8s.local
 kubernetesVersion: 1.19.7
 awsRegion: ap-southeast-2a
-kopsStateStore: s3://joey-kops-bkt
+kopsStateStore: s3://joey-kops-bkt1
 igMasterName: master-joey
 igNodesName: nodes-joey
+masterInstanceType: t2.medium
+nodeInstanceType: t2.medium

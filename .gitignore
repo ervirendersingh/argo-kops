@@ -1,5 +1,6 @@
-terraform.tfstate
+terraform.tfstate.*
 tfplan
 .terraform
 data
 kubernetes.tf
+terraform.tfstate

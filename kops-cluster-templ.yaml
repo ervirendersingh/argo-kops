@@ -63,9 +63,9 @@ metadata:
   name: {{.igMasterName}}
 spec:
   image: 099720109477/ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210119.1
-  machineType: t2.micro
-  maxSize: 3
-  minSize: 3
+  machineType: {{.masterInstanceType}}
+  maxSize: 1
+  minSize: 1
   nodeLabels:
     kops.k8s.io/instancegroup: {{.igMasterName}}
   role: Master
@@ -86,14 +86,9 @@ spec:
     k8s.io/cluster-autoscaler/enabled: ""
     k8s.io/cluster-autoscaler/node-template/label: ""
     k8s.io/cluster-autoscaler/{{.clusterName}}: ""
-  machineType: t2.micro
+  machineType: {{.nodeInstanceType}}
   maxSize: 10
-  minSize: 8
-  mixedInstancesPolicy:
-    instances:
-    - t2.micro
-    onDemandAboveBase: 0
-    onDemandBase: 1
+  minSize: 5
   nodeLabels:
     kops.k8s.io/instancegroup: {{.igNodesName}}
   role: Node
