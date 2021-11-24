@@ -6,5 +6,4 @@ resources:
 
 patchesStrategicMerge:
   - roles-cm.yml
-  - argocd-rbac-cm.yml
   
